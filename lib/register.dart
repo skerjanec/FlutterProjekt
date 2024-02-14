@@ -22,7 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
         title: Text('Register'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(50.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
