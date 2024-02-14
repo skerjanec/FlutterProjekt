@@ -11,7 +11,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _surnameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  TextEditingController _againpasswordController = TextEditingController();
+  TextEditingController _againPasswordController = TextEditingController();
   TextEditingController _phoneNumberController = TextEditingController();
 
 
@@ -56,7 +56,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             SizedBox(height: 20),
             TextField(
-              controller: _againpasswordController,
+              controller: _againPasswordController,
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Ponovi geslo',
@@ -91,7 +91,7 @@ class _RegisterPageState extends State<RegisterPage> {
     _surnameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _againpasswordController.dispose();
+    _againPasswordController.dispose();
     _phoneNumberController.dispose();
     super.dispose();
   }
