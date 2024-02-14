@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'register.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -27,18 +29,34 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate to the second page when the button is pressed
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => LoginPage()),
-            );
-          },
-          child: Text('Go to login page'),
+      body: Center( 
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the second page when the button is pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+              child: Text('Go to login page'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+            onPressed: () {
+              // Navigate to the second page when the button is pressed
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => RegisterPage()),
+              );
+            },
+            child: Text('Go to reg page'),
+          ),
+          ]
         ),
-      ),
+      )
     );
   }
 }
