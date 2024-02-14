@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'forgottenPassword.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -44,7 +44,10 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: (){
                     // TO DO FORGOT password SCREEN GOES HERE
                     print('to forgoten psw screen');
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgottenPasswordPage()),
+                    );
                   },
                   child: Text(
                     'Forgot Password',
