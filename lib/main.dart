@@ -1,66 +1,44 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
+void main() {
+  runApp(MyApp());
 }
 
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Navigation Example',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color.fromARGB(255, 201, 196, 196), // Scaffold background color
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink).copyWith(secondary: Colors.orange).copyWith(background: Colors.white),
 
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Home Page'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(
-                labelText: 'Username',
-              ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Password',
-              ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Perform login operation here
-                String username = _usernameController.text;
-                String password = _passwordController.text;
-                print('Username: $username');
-                print('Password: $password');
-              },
-              child: Text('Login'),
-            ),
-          ],
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Navigate to the second page when the button is pressed
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()),
+            );
+          },
+          child: Text('Go to login page'),
         ),
       ),
     );
   }
-
-  @override
-  void dispose() {
-    _usernameController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: LoginPage(),
-  ));
 }
