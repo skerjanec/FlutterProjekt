@@ -35,16 +35,33 @@ class _ForgottenPasswordPageState extends State<ForgottenPasswordPage> {
                 labelText: 'ponovi e-mail',
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
                 // TO DO register thingy
                 String mail = _emailController.text;
                 print('mail: $mail');
                 print('Reset');
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      content: Text('Na mail vam je bila poslana povezava'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('OK'),
+                        ),
+                      ],
+                    );
+                  },
+                );
               },
               child: Text('Reset password'),
             ),
+            SizedBox(height: 40),
           ],
         ),
       ),

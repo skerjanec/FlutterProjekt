@@ -11,7 +11,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _surnameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  TextEditingController _againPasswordController = TextEditingController();
+  TextEditingController _againpasswordController = TextEditingController();
   TextEditingController _phoneNumberController = TextEditingController();
 
 
@@ -22,8 +22,13 @@ class _RegisterPageState extends State<RegisterPage> {
         title: Text('Register'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(50.0),
-        child: Column(
+          padding: EdgeInsets.only(
+            top: 20.0,
+            bottom: 20.0,
+            left: 50.0,
+            right: 50.0,
+          ),
+          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
@@ -56,7 +61,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             SizedBox(height: 20),
             TextField(
-              controller: _againPasswordController,
+              controller: _againpasswordController,
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Ponovi geslo',
@@ -73,6 +78,10 @@ class _RegisterPageState extends State<RegisterPage> {
             ElevatedButton(
               onPressed: () {
                 // TO DO register thingy
+                // v bazo
+                // check 
+                // - geslo=geslo
+                // - a je že kdo z mailom
                 String password = _passwordController.text;
                 print('Password: $password');
                 print('Register');
@@ -91,7 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
     _surnameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _againPasswordController.dispose();
+    _againpasswordController.dispose();
     _phoneNumberController.dispose();
     super.dispose();
   }
