@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'newTeam.dart';
 
 class TeamsPage extends StatefulWidget {
   @override
@@ -61,7 +61,10 @@ class _TeamsPageState extends State<TeamsPage> {
                   onPressed: (){
                     // TO DO ustaveri ekipo SCREEN GOES HERE
                     print('to ustvari ekipo screen');
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NewTeamPage()),
+                    );
                   },
                   child: Text(
                     'Ustvari novo ekipo',
