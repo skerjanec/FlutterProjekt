@@ -28,67 +28,69 @@ class _RegisterPageState extends State<RegisterPage> {
             left: 50.0,
             right: 50.0,
           ),
-          child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: _nameController,
-              decoration: InputDecoration(
-                labelText: 'Ime',
+        child: SingleChildScrollView(
+            child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: _nameController,
+                decoration: InputDecoration(
+                  labelText: 'Ime',
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _surnameController,
-              decoration: InputDecoration(
-                labelText: 'Priimek',
+              SizedBox(height: 20),
+              TextField(
+                controller: _surnameController,
+                decoration: InputDecoration(
+                  labelText: 'Priimek',
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(
-                labelText: 'E-mail',
+              SizedBox(height: 20),
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  labelText: 'E-mail',
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Geslo',
+              SizedBox(height: 20),
+              TextField(
+                controller: _passwordController,
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Geslo',
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _againpasswordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Ponovi geslo',
+              SizedBox(height: 20),
+              TextField(
+                controller: _againpasswordController,
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Ponovi geslo',
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _phoneNumberController,
-              decoration: InputDecoration(
-                labelText: 'Telefonska',
+              SizedBox(height: 20),
+              TextField(
+                controller: _phoneNumberController,
+                decoration: InputDecoration(
+                  labelText: 'Telefonska',
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // TO DO register thingy
-                // v bazo
-                // check 
-                // - geslo=geslo
-                // - a je že kdo z mailom
-                String password = _passwordController.text;
-                print('Password: $password');
-                print('Register');
-              },
-              child: Text('Register'),
-            ),
-          ],
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // TO DO register thingy
+                  // v bazo
+                  // check 
+                  // - geslo=geslo
+                  // - a je že kdo z mailom
+                  String password = _passwordController.text;
+                  print('Password: $password');
+                  print('Register');
+                },
+                child: Text('Register'),
+              ),
+            ],
+          ),
         ),
       ),
     );
