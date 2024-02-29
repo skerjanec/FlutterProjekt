@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'register.dart';
+import 'teams.dart';
 
 
 void main() {
@@ -49,10 +50,10 @@ class HomePage extends StatelessWidget {
               // Navigate to the second page when the button is pressed
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => RegisterPage()),
+                MaterialPageRoute(builder: (context) => TeamsPage()),
               );
             },
-            child: Text('Go to reg page'),
+            child: Text('Go to Teams page'),
           ),
           ]
         ),

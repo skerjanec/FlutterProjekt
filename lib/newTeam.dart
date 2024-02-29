@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'calender.dart';
 
 
 class NewTeamPage extends StatefulWidget {
@@ -38,6 +39,10 @@ class _NewTeamPageState extends State<NewTeamPage> {
               ),
             ),
             SizedBox(height: 20),
+            // TO DO - ADD CAL..
+////////////////////////////////////////////////////////////////////////////////////////
+            CustomTableCalendar(),
+            SizedBox(height: 20),
             // TO DO - a implementiramo al ne? sam vsi majo to
             CheckboxListTile(
               title: Text('dodaj stran za pjačo'),
@@ -56,7 +61,7 @@ class _NewTeamPageState extends State<NewTeamPage> {
                 print('ime: $name');
                 print('Reset');
               },
-              child: Text('Reset password'),
+              child: Text('Ustvari novo ekipo'),
             ),
             SizedBox(height: 40),
           ],
