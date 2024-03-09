@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
-import 'register.dart';
 import 'teams.dart';
 
 
-void main() {
+import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await findSystemLocale();
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Navigation Example',
       theme: ThemeData(
         scaffoldBackgroundColor: Color.fromARGB(255, 201, 196, 196), // Scaffold background color
-      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink).copyWith(secondary: Colors.orange).copyWith(background: Colors.white),
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink).copyWith(secondary: Color.fromARGB(255, 180, 174, 165)).copyWith(background: Colors.white),
 
       ),
       home: HomePage(),

@@ -3,6 +3,13 @@ import 'package:table_calendar/table_calendar.dart';
 
 import 'dart:collection';
 
+
+import 'package:date_field/date_field.dart';
+import 'package:intl/date_symbol_data_local.dart';
+
+
+/// KOLEDAR!!!
+
 class Event {
   final String title;
 
@@ -40,19 +47,9 @@ int getHashCode(DateTime key) {
     _eventsList = {
       DateTime.now().subtract(Duration(days: 2)): ['Event A1', 'Event B1'],
       DateTime.now(): ['Event A2', 'Event B2', 'Event C1', 'Event D1'],
-      DateTime.now().add(Duration(days: 1)): [
-        'Event A3',
-        'Event B3',
-        'Event C2',
-        'Event D2'
-      ],
+      DateTime.now().add(Duration(days: 1)): ['Event A3'],
       DateTime.now().add(Duration(days: 3)):
           Set.from(['Event A4', 'Event A5', 'Event B4']).toList(),
-      DateTime.now().add(Duration(days: 7)): [
-        'Event A6',
-        'Event B5',
-        'Event C3'
-      ],
     };
   }
 
@@ -111,4 +108,64 @@ int getHashCode(DateTime key) {
   }
 
 
+}
+
+
+
+/////// TESTNO 
+class CalendarPage extends StatefulWidget {
+  @override
+  _CalendarPageState createState() => _CalendarPageState();
+}
+
+class _CalendarPageState extends State<CalendarPage> {
+
+  @override
+  Widget build(BuildContext context) {
+    DateTime? _selectedDateStart;
+    DateTime? _selectedDateEnd;
+
+    initializeDateFormatting();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pozabljeno geslo'),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(50.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:[
+            DateTimeFormField(
+              mode: DateTimeFieldPickerMode.date,
+              decoration: const InputDecoration(
+                labelText: 'Datum začetka sezone',
+              ),
+              firstDate: DateTime.now().add(const Duration(days: 10)),
+              lastDate: DateTime.now().add(const Duration(days: 40)),
+              initialPickerDateTime: DateTime.now().add(const Duration(days: 20)),
+              onChanged: (DateTime? value) {
+                _selectedDateStart = value;
+              },
+            ),
+            SizedBox(height: 20),
+            DateTimeFormField(
+              mode: DateTimeFieldPickerMode.date,
+              decoration: const InputDecoration(
+                labelText: 'Datum konca sezone',
+              ),
+              firstDate: DateTime.now().add(const Duration(days: 10)),
+              lastDate: DateTime.now().add(const Duration(days: 40)),
+              initialPickerDateTime: DateTime.now().add(const Duration(days: 20)),
+              onChanged: (DateTime? value) {
+                _selectedDateEnd = value;
+              },
+            ),                
+            SizedBox(height: 20),
+            CustomTableCalendar(),
+          ]
+        )
+      )
+    );
+  }
 }
