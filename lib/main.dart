@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'teams.dart';
+import 'calendar.dart';
 
 
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
@@ -54,7 +55,8 @@ class HomePage extends StatelessWidget {
               // Navigate to the second page when the button is pressed
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => TeamsPage()),
+                //MaterialPageRoute(builder: (context) => TeamsPage()),
+                MaterialPageRoute(builder: (context) => CalendarPage()),
               );
             },
             child: Text('Go to Teams page'),
