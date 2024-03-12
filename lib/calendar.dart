@@ -163,7 +163,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
                       TextButton(
                         onPressed: () {
                           eventName = _nameController.text;
-                          print("ADDDD EVENTTTTTTT");
+                          print("ADDDD EVENTTTTTTTT");
                           print(dayChosen);
                           print(weeklyRepeat);
                           print(eventName);
