@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'newTeam.dart';
+import 'drawer.dart';
 
 class TeamsPage extends StatefulWidget {
   @override
@@ -76,6 +77,8 @@ class _TeamsPageState extends State<TeamsPage> {
           ),
         ),
       ),
+      endDrawer: CustomDrawer(),
+
     );
   }
 

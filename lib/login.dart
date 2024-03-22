@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Login'),
+        //automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: EdgeInsets.all(50.0),

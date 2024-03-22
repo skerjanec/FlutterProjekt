@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'calendar.dart';
+import 'drawer.dart';
 
 
 class NewTeamPage extends StatefulWidget {
@@ -74,6 +75,7 @@ class _NewTeamPageState extends State<NewTeamPage> {
           ],
         ),
       ),
+      endDrawer: CustomDrawer(),
     );
   }
 
