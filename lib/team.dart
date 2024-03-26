@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'newTeam.dart';
 import 'drawer.dart';
 import 'rules.dart';
+import 'history.dart';
+import 'drinks.dart';
+import 'lineup.dart';
 
 class TeamPage extends StatelessWidget {
   final int teamId;
@@ -43,11 +46,11 @@ class TeamPage extends StatelessWidget {
                   // Navigate to the second page when the button is pressed
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => TeamPage(teamId: teamId, admin: true),
+                      builder: (context) => LineupPage(teamId: teamId, admin: true),
                     )
                   );
                 },
-                child: Text('Posava'),
+                child: Text('Postava'),
               ),
               SizedBox(height: 20),
               ElevatedButton(
@@ -55,7 +58,7 @@ class TeamPage extends StatelessWidget {
                   // Navigate to the second page when the button is pressed
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => TeamPage(teamId: teamId, admin: true),
+                      builder: (context) => DrinksPage(teamId: teamId, admin: true),
                     )
                   );
                 },
@@ -67,7 +70,7 @@ class TeamPage extends StatelessWidget {
                   // Navigate to the second page when the button is pressed
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => TeamPage(teamId: teamId, admin: true),
+                      builder: (context) => HistoryPage(teamId: teamId, admin: true),
                     )
                   );
                 },

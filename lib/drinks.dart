@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'drawer.dart';
 
-class RulesPage extends StatefulWidget {
+class DrinksPage extends StatefulWidget {
   final int teamId;
   final bool admin;
 
-  const RulesPage({required this.teamId, required this.admin});
+  const DrinksPage({required this.teamId, required this.admin});
 
   @override
-  _RulesPageState createState() => _RulesPageState();
+  _DrniksPageState createState() => _DrniksPageState();
 }
 
-class _RulesPageState extends State<RulesPage> {  
+class _DrniksPageState extends State<DrinksPage> {  
   TextEditingController _textEditingController = TextEditingController();
   bool _isEditing = false;
   String? _errorMessage;
 
-
   @override
   Widget build(BuildContext context) {
     bool admin = widget.admin;
+    _textEditingController.text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pravila'),
+        title: Text('Pjača'),
       ),
       body: Padding(
         padding: EdgeInsets.all(50.0),
