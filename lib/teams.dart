@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'newTeam.dart';
 import 'drawer.dart';
+import 'team.dart';
 
 class TeamsPage extends StatefulWidget {
   @override
@@ -45,6 +46,7 @@ class _TeamsPageState extends State<TeamsPage> {
                         onTap: () {
                           // Handle item tap
                           print('Tapped on ${items[index]}');
+                          _onItemClicked(context,index);
                         },
                         child: ListTile(
                           title: Text(
@@ -81,6 +83,15 @@ class _TeamsPageState extends State<TeamsPage> {
 
     );
   }
+
+    void _onItemClicked(BuildContext context, int index) {
+    // Navigate to the new widget while passing the context of the clicked item
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => TeamPage(teamId: index, admin: false),
+      ),
+    );
+    }
 
 
 }
